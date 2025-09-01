@@ -68,7 +68,7 @@ const unsigned long retraso = 100;
 //▶︎ •၊၊||၊|။|||| |၊၊•  Adafruit  •၊၊||၊|။||||။‌‌‌‌‌၊|• 
 
 #define IO_USERNAME "SndSpn"
-#define IO_KEY "aio_riux56ZW4WGOpkbNhCAKGKFQktP4"
+#define IO_KEY "aio_WsES10fh7OxBjSaD9wsEcA10AmB0"
 #define WIFI_SSID "AllanWifi"
 #define WIFI_PASS "07070707"
 AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
@@ -163,7 +163,7 @@ void loop() {
      Serial.print("Temperatura: ");
      Serial.print(lectura);
      Serial.println(" °C");
-     ledcWrite(servoCanal, 255);
+     ledcWrite(servoCanal, 155);
 
     }
     else if (lectura<25 && lectura>22){
@@ -173,7 +173,7 @@ void loop() {
      digitalWrite(ledG, HIGH);
      digitalWrite(ledR, LOW);
      digitalWrite(ledB, LOW);
-     ledcWrite(servoCanal, 327);
+     ledcWrite(servoCanal, 250);
     }
     else{
       Serial.print("Temperatura: ");
@@ -182,7 +182,7 @@ void loop() {
       digitalWrite(ledR, HIGH);
       digitalWrite(ledB, LOW);
       digitalWrite(ledG, LOW);
-      ledcWrite(servoCanal, 425);
+      ledcWrite(servoCanal, 270);
     }
     delay(300);
   }
@@ -295,3 +295,4 @@ void MostrarNumero(uint8_t numero){
   }
 
 }
+
