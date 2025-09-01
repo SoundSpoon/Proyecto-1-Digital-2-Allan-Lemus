@@ -68,8 +68,8 @@ const unsigned long retraso = 100;
 //▶︎ •၊၊||၊|။|||| |၊၊•  Adafruit  •၊၊||၊|။||||။‌‌‌‌‌၊|• 
 
 #define IO_USERNAME "SndSpn"
-#define IO_KEY "aio_QIBE39jAr3FlREZNWvH142zzseXm"
-#define WIFI_SSID "Allan Wifi"
+#define IO_KEY "aio_riux56ZW4WGOpkbNhCAKGKFQktP4"
+#define WIFI_SSID "AllanWifi"
 #define WIFI_PASS "07070707"
 AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 #define IO_LOOP_DELAY 5000
@@ -148,7 +148,7 @@ void loop() {
      digitalWrite(d3, LOW);
      delay(5);
   if (digitalRead(btn) == HIGH){
-    io.run();
+     io.run();
      int sensorValue = analogRead(temp);
      float voltage = (sensorValue / 4095.0) * 3.3;
      float lectura = (voltage *100.0)+9;
@@ -163,7 +163,7 @@ void loop() {
      Serial.print("Temperatura: ");
      Serial.print(lectura);
      Serial.println(" °C");
-     ledcWrite(servoCanal, 155);
+     ledcWrite(servoCanal, 255);
 
     }
     else if (lectura<25 && lectura>22){
@@ -173,7 +173,7 @@ void loop() {
      digitalWrite(ledG, HIGH);
      digitalWrite(ledR, LOW);
      digitalWrite(ledB, LOW);
-     ledcWrite(servoCanal, 307);
+     ledcWrite(servoCanal, 327);
     }
     else{
       Serial.print("Temperatura: ");
@@ -182,7 +182,7 @@ void loop() {
       digitalWrite(ledR, HIGH);
       digitalWrite(ledB, LOW);
       digitalWrite(ledG, LOW);
-      ledcWrite(servoCanal, 435);
+      ledcWrite(servoCanal, 425);
     }
     delay(300);
   }
